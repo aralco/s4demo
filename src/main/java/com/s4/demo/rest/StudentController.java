@@ -58,7 +58,7 @@ public class StudentController extends GenericController<Student, StudentRequest
     }
 
     @PutMapping("/class/{studentId}")
-    public ResponseEntity<StudentResponse> update(@PathVariable String studentId, @RequestBody String classCode) throws NotFoundException {
+    public ResponseEntity<StudentResponse> addClassToStudent(@PathVariable String studentId, @RequestBody String classCode) throws NotFoundException {
         Student student = service.addClass(studentId, classCode);
         return ResponseEntity
                 .ok(modelMapper.map(student, StudentResponse.class));

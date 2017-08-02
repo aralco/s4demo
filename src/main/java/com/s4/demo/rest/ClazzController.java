@@ -60,7 +60,7 @@ public class ClazzController extends GenericController<Student, StudentRequest> 
     }
 
     @PutMapping("/student/{classCode}")
-    public ResponseEntity<ClazzResponse> update(@PathVariable String classCode, @RequestBody String studentId) throws NotFoundException {
+    public ResponseEntity<ClazzResponse> addStudentToClass(@PathVariable String classCode, @RequestBody String studentId) throws NotFoundException {
         Clazz clazz = clazzService.addStudent(classCode, studentId);
         return ResponseEntity
                 .ok(modelMapper.map(clazz, ClazzResponse.class));
