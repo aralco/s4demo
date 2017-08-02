@@ -1,0 +1,9 @@
+spring:
+    application:
+        name: s4demo
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: create-drop
+server:
+    context-path: /s4demo
