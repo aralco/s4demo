@@ -15,6 +15,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.xml.bind.ValidationException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,10 +32,10 @@ public class StudentController extends GenericController<Student, StudentRequest
     private ClazzService clazzService;
 
     @PostMapping
-    public ResponseEntity<StudentResponse> create(@RequestBody StudentRequest request) throws NotFoundException, ValidationException {
+    public ResponseEntity<StudentResponse> create(@RequestBody StudentRequest request) throws NotFoundException, ValidationException, URISyntaxException {
         Student student = modelMapper.map(request, Student.class);
-        return ResponseEntity
-                .ok(modelMapper.map(service.create(student), StudentResponse.class));
+        return ResponseEntity.created(new URI("/students"))
+                .body(modelMapper.map(service.create(student), StudentResponse.class));
     }
 
     @GetMapping

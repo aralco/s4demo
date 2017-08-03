@@ -65,6 +65,19 @@ public class Student implements Serializable {
         clazzes.add(clazz);
     }
 
+    @Override
+    public boolean equals(Object object)
+    {
+        boolean sameSame = false;
+
+        if (object != null && object instanceof Student )
+        {
+            sameSame = getId() == ((Student) object).getId();
+        }
+
+        return sameSame;
+    }
+
 }
 
 

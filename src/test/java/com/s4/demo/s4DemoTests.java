@@ -1,4 +1,4 @@
-package com.s4;
+package com.s4.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
