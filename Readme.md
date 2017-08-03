@@ -1,4 +1,4 @@
-#S4 Super Simple Scheduling System
+# S4 Super Simple Scheduling System
 
 ## Technologies used
 - Spring Web for REST API 
