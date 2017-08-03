@@ -1,4 +1,4 @@
-#S4 Super Simple Scheduling System
+# S4 Super Simple Scheduling System
 
 ## Technologies used
 - Spring Web for REST API 
@@ -15,7 +15,9 @@
 
 - To search students with id greater or equal than 2:
 
-URL Request: POST /students/search
+URL Request: 
+POST /students/search
+
 Request Body: 
 [
   {
@@ -28,7 +30,9 @@ Request Body:
 
 - To search a Student with first name "John" and last name "Doe":
 
-URL Request: POST /students/search
+URL Request: 
+POST /students/search
+
 Request Body: 
 [
   {
